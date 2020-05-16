@@ -33,7 +33,6 @@ const setHeaderListeners = () => {
                 hiddenNumber.style.cssText = 'opacity: 0; margin-top: 0; transform: translateX(0px);';
             }
         }else if(target === menuIcon){
-            console.log(target)
             window.innerWidth < 576 ? popupDialogMenu.style.transform = 'translate3d(0, 0, 0)' : popupDialogMenu.style.transform = 'translateX(0)';
             body.addEventListener('click', hideMenu);
         }
