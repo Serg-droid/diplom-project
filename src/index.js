@@ -23,6 +23,10 @@ import setPopupTransparencySlider from './modules/setPopupTransparencySlider';
 import showProblemsRound from './modules/showProblemsRound';
 import setDesignsSlider from './modules/setDesignsSlider';
 import showConsultPopup from './modules/showConsultPopup';
+import setReviewSlider from './modules/setReviewSlider';
+import setSchemeTabs from './modules/setSchemeTabs';
+import setFaqAccordeon from './modules/setFaqAccordeon';
+import setPartnersSlider from './modules/setPartnersSlider';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -63,4 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setDesignsSlider();
     //обработка кнопок "Проконсультироваться"
     showConsultPopup();
+    //установка слайдера на отзывы
+    setReviewSlider();
+    //установка табов на схему работы
+    setSchemeTabs();
+    //установка аакордеона ЧаВо
+    setFaqAccordeon();
+    //слайдер на партнеров
+    setPartnersSlider();
 });

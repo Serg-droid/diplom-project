@@ -1,4 +1,5 @@
 import makeRequest from './makeRequest';
+import showPopupThank from './showPopupThank';
 
 const setForms = () => {
     const   allForms = document.querySelectorAll('form'),
@@ -14,7 +15,8 @@ const setForms = () => {
     const requestHandler = (msg) => {
         switch(msg){
             case 'get':
-                console.log('Данные успешно отправлены');
+                //показывает модальное окно после отправки формы
+                showPopupThank();
                 return;
             case 'error':
                 console.log('Произошла ошибка при отправке данных');
