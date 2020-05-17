@@ -18,6 +18,11 @@ import setRepairTypesSlider from './modules/setRepairTypesSlider';
 import setPortfolioSlider from './modules/setPortfolioSlider';
 import showPopupPortfolio from './modules/showPopupPortfolio';
 import showTransparencySlider from './modules/showTransparencySlider';
+import showPopupTransparency from './modules/showPopupTransparency';
+import setPopupTransparencySlider from './modules/setPopupTransparencySlider';
+import showProblemsRound from './modules/showProblemsRound';
+import setDesignsSlider from './modules/setDesignsSlider';
+import showConsultPopup from './modules/showConsultPopup';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -48,4 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     showPopupPortfolio();
     //обрабатывает слайдер документов
     showTransparencySlider();
+    //показывает модалку документа
+    showPopupTransparency();
+    //обрабатывает слайдер модалки с документом
+    setPopupTransparencySlider();
+    //показывает сообщения при наведении на круги в разделе проблемы
+    showProblemsRound();
+    //обрабатывает слайдер раздела дизайна
+    setDesignsSlider();
+    //обработка кнопок "Проконсультироваться"
+    showConsultPopup();
 });

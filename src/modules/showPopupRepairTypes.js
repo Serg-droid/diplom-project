@@ -13,7 +13,9 @@ const showPopupRepairTypes = () => {
 
     popupRepairTypes.addEventListener('click', (e) => {
         const target = e.target;
-        if(target.matches('.close') || !target.matches('.popup-dialog-repair-types')){
+        const   closeBtn = target.closest('.close'),
+                popupDialog = target.closest('.popup-dialog-repair-types');
+        if(closeBtn || !popupDialog){
             popupRepairTypes.style.visibility = 'hidden';
         }
     });

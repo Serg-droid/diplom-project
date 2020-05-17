@@ -39,11 +39,11 @@ const slider = ({ arrowRight, arrowLeft, slider, slidesArr, callback }) => {
             options.currentSlide = Math.min(options.totalSlides, options.currentSlide + 1);
             options.onStart = false;
             const oldPos = +slidesContainer.style.transform.match(/\-?[0-9]+/)[0];
-            const newPos = oldPos - slideWidth;
+            const newPos = oldPos - options.slideWidth;
             if(Math.abs(newPos) > options.max){
                 options.onEnd = true;
                 //делаем так, чтобы самый последний элемент показался полностью
-                const restPos = ((slidesArr.length) * slideWidth) - options.sliderWidth - Math.abs(newPos);
+                const restPos = ((slidesArr.length) * options.slideWidth) - options.sliderWidth - Math.abs(newPos);
                 slidesContainer.style.transform = `translateX(${newPos - restPos}px)`;
                 return;
             }
@@ -56,7 +56,7 @@ const slider = ({ arrowRight, arrowLeft, slider, slidesArr, callback }) => {
             options.currentSlide = Math.max(1, options.currentSlide - 1);
             options.onEnd = false;
             const oldPos = +slidesContainer.style.transform.match(/\-?[0-9]+/)[0];
-            const newPos = oldPos + slideWidth;
+            const newPos = oldPos + options.slideWidth;
             if(newPos > options.min){
                 options.onStart = true;
                 //делаем так, чтоьы самый последний элемент показался полностью
