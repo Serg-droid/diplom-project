@@ -15,6 +15,9 @@ const showRoundHelp = () => {
             divTextHelp.style.bottom = '';
             divTextHelp.style.top = '90px';
         }
+
+        const itemIconInner = target.querySelector('.formula-item__icon-inner');
+        itemIconInner.style.opacity = '1';
     });
 
     formulaDivDesktop.addEventListener('mouseout', (e) => {
@@ -25,6 +28,9 @@ const showRoundHelp = () => {
         divTextHelp.style.opacity = '.1';
         divTextHelp.style.bottom = '90px';
         divTextHelp.style.top = '';
+
+        const itemIconInner = target.querySelector('.formula-item__icon-inner');
+        itemIconInner.style.opacity = '0';
     });
 };
 

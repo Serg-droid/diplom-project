@@ -1,14 +1,15 @@
-const setRepairTypesSlider = () => {
-    const   divRepairTypes = document.getElementById('repair-types'),
-            allSliders = divRepairTypes.querySelectorAll('.repair-types-slider > div'),
-            navButtons = divRepairTypes.querySelectorAll('.nav-list > button'),
-            currentSlide = divRepairTypes.querySelector('.slider-counter-content__current'),
-            totalSlides = divRepairTypes.querySelector('.slider-counter-content__total'),
-            arrowRight = document.getElementById('repair-types-arrow_right'),
-            arrowLeft = document.getElementById('repair-types-arrow_left');
+const setPopupDesignSlider = () => {
+    const   popupDesign = document.querySelector('.popup-dialog-design'),
+            allSliders = popupDesign.querySelectorAll('.popup-design-slider > div'),
+            navButtons = popupDesign.querySelectorAll('.nav-list > button'),
+            currentSlide = popupDesign.querySelector('.slider-counter-content__current'),
+            totalSlides = popupDesign.querySelector('.slider-counter-content__total'),
+            allTexts = popupDesign.querySelectorAll('.popup-design-text'),
+            arrowRight = document.getElementById('popup_design_right'),
+            arrowLeft = document.getElementById('popup_design_left');
 
     let activeSlider = 0,
-        allSlides = allSliders[activeSlider].querySelectorAll('.repair-types-slider__slide'),
+        allSlides = allSliders[activeSlider].querySelectorAll('.popup-design-slider__style-slide'),
         activeSlide = 0;
 
     totalSlides.textContent = allSlides.length;
@@ -26,8 +27,12 @@ const setRepairTypesSlider = () => {
             allSliders[activeSlider].style.display = 'none';
             allSliders[index].style.display = 'block';
 
+            //меняем текст описания
+            allTexts[activeSlider].classList.remove('visible-content-block');
+            allTexts[index].classList.add('visible-content-block');
+
             activeSlider = index;
-            allSlides = allSliders[activeSlider].querySelectorAll('.repair-types-slider__slide');
+            allSlides = allSliders[activeSlider].querySelectorAll('.popup-design-slider__style-slide');
             activeSlide = 0;
             currentSlide.textContent = 1;
             totalSlides.textContent = allSlides.length;
@@ -55,4 +60,4 @@ const setRepairTypesSlider = () => {
     });
 };
 
-export default setRepairTypesSlider;
+export default setPopupDesignSlider;

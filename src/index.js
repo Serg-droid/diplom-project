@@ -27,6 +27,9 @@ import setReviewSlider from './modules/setReviewSlider';
 import setSchemeTabs from './modules/setSchemeTabs';
 import setFaqAccordeon from './modules/setFaqAccordeon';
 import setPartnersSlider from './modules/setPartnersSlider';
+import showPopupDesign from './modules/showPopupDesign';
+import setPopupDesignSlider from './modules/setPopupDesignSlider';
+import loadRepairTypesData from './modules/loadRepairTypesData';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -45,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setForms();
     //показывает модалку "Политика конфиденциальности"
     showPopupPrivacy();
-    //показывает подсказки при наведении мышкой на кружки
+    //показывает подсказки при наведении мышкой на кружки + слайдер адаптив
     showRoundHelp();
-    //обрабатывает слайдер блока formula
     setFormulaSlider();
      //обрабатывает слайдер видов ремонта
     setRepairTypesSlider();
@@ -75,4 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setFaqAccordeon();
     //слайдер на партнеров
     setPartnersSlider();
+    //показывает попа окно раздела design + утснавливаем слайдер
+    showPopupDesign();
+    setPopupDesignSlider();
+    //подгрузка данных в модалку repair-types
+    loadRepairTypesData();
 });

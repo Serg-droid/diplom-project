@@ -19,6 +19,9 @@ const showProblemsRound = () => {
             divTextHelp.style.bottom = '';
             divTextHelp.style.top = `-${divTextHelp.getBoundingClientRect().height}px`;
         }
+
+        const itemIconInner = target.querySelector('.problems-item__icon-inner');
+        itemIconInner.style.opacity = '1';
     });
 
     problemsDivDesktop.addEventListener('mouseout', (e) => {
@@ -29,6 +32,9 @@ const showProblemsRound = () => {
         divTextHelp.style.opacity = '.1';
         divTextHelp.style.bottom = '90px';
         divTextHelp.style.top = '';
+
+        const itemIconInner = target.querySelector('.problems-item__icon-inner');
+        itemIconInner.style.opacity = '0';
     });
 };
 

@@ -1,35 +1,33 @@
+import slider from './slider';
+
 const setFormulaSlider = () => {
     const   formulaDiv = document.getElementById('formula'),
             formulaSlider = formulaDiv.querySelector('.formula-slider'),
-            formulaAllSlides = formulaSlider.querySelectorAll('.formula-slider__slide');
+            formulaAllSlides = formulaSlider.querySelectorAll('.formula-slider__slide'),
+            arrowRight = document.getElementById('formula-arrow_right'),
+            arrowLeft = document.getElementById('formula-arrow_left');
 
-    //устанвливаем дефолтное состояние слайдера
-    formulaSlider.style.display = 'flex';
+    formulaAllSlides.forEach((slide) => {
+        const sliderWidth = formulaSlider.getBoundingClientRect().width;
+        slide.style.width = `${sliderWidth / 3}px`;
+    });
 
-    formulaAllSlides.forEach((slide, index) => {
-        // if(index === 0){
-        //     slide.style.opacity = '1';
-        //     const description = slide.querySelector('.formula-item-popup');
-        //     description.style.visibility = 'visible';
-        //     description.style.opacity = '1';
-        //     return;
-        // }else if(index === 5 || index === 1) {
-        //     const description = slide.querySelector('.formula-item-popup');
-        //     description.style.visibility = 'visible';
-        //     return;
-        // }
-        if(index === 5 || index === 1){
-            const description = slide.querySelector('.formula-item-popup');
-                description.style.visibility = 'visible';
-                return;
-        }else if(index === 0){
-            slide.style.opacity = '1';
-                const description = slide.querySelector('.formula-item-popup');
-                description.style.visibility = 'visible';
-                description.style.opacity = '1';
-                return;
-        }
-        // slide.style.display = 'none';
+    const callback = (options) => {
+        options.slideWidth = options.sliderWidth / 3;
+        arrowLeft.addEventListener('click', () => {
+            
+        });
+        arrowRight.addEventListener('click', () => {
+
+        });
+    };
+
+    slider({
+        arrowLeft,
+        arrowRight,
+        slider: formulaSlider,
+        slidesArr: [...formulaAllSlides],
+        callback,
     });
 };
 
