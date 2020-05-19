@@ -1,5 +1,3 @@
-import makeRequest from './makeRequest';
-
 const loadRepairTypesData = () => {
     fetch('../../db/db.json')
         .then(response => {

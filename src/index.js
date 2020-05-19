@@ -30,6 +30,7 @@ import setPartnersSlider from './modules/setPartnersSlider';
 import showPopupDesign from './modules/showPopupDesign';
 import setPopupDesignSlider from './modules/setPopupDesignSlider';
 import loadRepairTypesData from './modules/loadRepairTypesData';
+import setAllTabsSliders from './modules/setAllTabsSliders';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -82,4 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setPopupDesignSlider();
     //подгрузка данных в модалку repair-types
     loadRepairTypesData();
+    //устанавливаем слайдеры на все табы ждя адаптива
+    setAllTabsSliders();
 });

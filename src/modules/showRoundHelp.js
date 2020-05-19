@@ -10,8 +10,14 @@ const showRoundHelp = () => {
         divTextHelp.style.opacity = '1';
         const heightPosition = divTextHelp.getBoundingClientRect().y;
         if(heightPosition < 0){
-            // const boardStyles = window.getComputedStyle(divTextHelp, '::before');
-            // boardStyles.setProperty('transform', 'rotate(180deg)');
+            const divClass = divTextHelp.classList.value.split(' ').join('.');
+            const style = document.createElement('style');
+            style.textContent = `
+            .${divClass}::before {
+                transform: rotate(180deg);
+            }
+            `;
+            document.head.appendChild(style);
             divTextHelp.style.bottom = '';
             divTextHelp.style.top = '90px';
         }
@@ -28,6 +34,14 @@ const showRoundHelp = () => {
         divTextHelp.style.opacity = '.1';
         divTextHelp.style.bottom = '90px';
         divTextHelp.style.top = '';
+        const divClass = divTextHelp.classList.value.split(' ').join('.');
+        const style = document.createElement('style');
+        style.textContent = `
+        .${divClass}::before {
+            transform: rotate(0deg);
+        }
+        `;
+        document.head.appendChild(style);
 
         const itemIconInner = target.querySelector('.formula-item__icon-inner');
         itemIconInner.style.opacity = '0';

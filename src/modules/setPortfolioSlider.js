@@ -9,7 +9,6 @@ const setPortfolioSlider = () => {
 
     const callback = (options) => {
         arrowLeft.addEventListener('click', () => {
-            console.log('hello')
             if(options.onStart){
                 arrowLeft.style.display = 'none';
             }
