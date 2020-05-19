@@ -31,6 +31,7 @@ import showPopupDesign from './modules/showPopupDesign';
 import setPopupDesignSlider from './modules/setPopupDesignSlider';
 import loadRepairTypesData from './modules/loadRepairTypesData';
 import setAllTabsSliders from './modules/setAllTabsSliders';
+import setProblemsSlider from './modules/setProblemsSlider';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setPopupTransparencySlider();
     //показывает сообщения при наведении на круги в разделе проблемы
     showProblemsRound();
+    setProblemsSlider();
     //обрабатывает слайдер раздела дизайна
     setDesignsSlider();
     //обработка кнопок "Проконсультироваться"

@@ -1,34 +1,16 @@
-import slider from './slider';
+import SliderCarousel from './slider-carousel';
 
 const setFormulaSlider = () => {
-    const   formulaDiv = document.getElementById('formula'),
-            formulaSlider = formulaDiv.querySelector('.formula-slider'),
-            formulaAllSlides = formulaSlider.querySelectorAll('.formula-slider__slide'),
-            arrowRight = document.getElementById('formula-arrow_right'),
-            arrowLeft = document.getElementById('formula-arrow_left');
+    const slider = new SliderCarousel({
+        next: '#formula-arrow_right',
+        prev: '#formula-arrow_left',
+        wrap: '.formula-slider',
+        main: '.formula-slider-wrap',
+        slidesToShow: 3,
+        position: 1,
+    })
 
-    formulaAllSlides.forEach((slide) => {
-        const sliderWidth = formulaSlider.getBoundingClientRect().width;
-        slide.style.width = `${sliderWidth / 3}px`;
-    });
-
-    const callback = (options) => {
-        options.slideWidth = options.sliderWidth / 3;
-        arrowLeft.addEventListener('click', () => {
-            
-        });
-        arrowRight.addEventListener('click', () => {
-
-        });
-    };
-
-    slider({
-        arrowLeft,
-        arrowRight,
-        slider: formulaSlider,
-        slidesArr: [...formulaAllSlides],
-        callback,
-    });
+    slider.init();
 };
 
 export default setFormulaSlider;
