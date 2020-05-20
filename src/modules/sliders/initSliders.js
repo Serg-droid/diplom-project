@@ -12,6 +12,8 @@ import showTransparencySlider from './showTransparencySlider';
 import setPopupTransparencySlider from './setPopupTransparencySlider';
 import setAllTabsSliders from './setAllTabsSliders';
 
+import loadRepairTypesData from '../others/loadRepairTypesData';
+
 const initSliders = () => {
     setPopupPortfolioSlider();
 
@@ -32,7 +34,7 @@ const initSliders = () => {
     showTransparencySlider();
     setPopupTransparencySlider();
 
-    setAllTabsSliders();
+    loadRepairTypesData(setAllTabsSliders);
 };
 
 export default initSliders;

@@ -1,4 +1,4 @@
-const loadRepairTypesData = () => {
+const loadRepairTypesData = (cb) => {
     fetch('../../db/db.json')
         .then(response => {
             if(response.status !== 200) {
@@ -69,7 +69,7 @@ const loadRepairTypesData = () => {
             if(!target.matches('.popup-repair-types-nav__item')){
                 return;
             }
-            const index = [...navList.children].indexOf(target);
+            const index = [...navList.querySelectorAll('.button_o')].indexOf(target);
             const activeButton = navList.querySelector('.active');
             activeButton.classList.remove('active');
             target.classList.add('active');
@@ -81,6 +81,8 @@ const loadRepairTypesData = () => {
 
             switchInner.textContent = data[index].title;
         });
+
+        cb();
     };
 };
 

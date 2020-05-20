@@ -24,11 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
     setForms();
-
-    initPopups();
-    initSliders();
-
-    loadRepairTypesData();
     scrollPage();
     setFaqAccordeon();
     setPhoneMask();
@@ -38,4 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showRoundHelp();
     showProblemsRound();
+
+    initPopups();
+    initSliders();
 });

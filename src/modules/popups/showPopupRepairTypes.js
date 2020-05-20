@@ -5,7 +5,6 @@ const showPopupRepairTypes = () => {
             popupRepairTypes = document.querySelector('.popup-repair-types');
 
     const showPopup = (e) => {
-        console.log(e.target)
         e.preventDefault();
         popupRepairTypes.style.visibility = 'visible';
     };
