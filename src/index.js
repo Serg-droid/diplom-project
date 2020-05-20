@@ -3,6 +3,12 @@ import 'nodelist-foreach-polyfill';
 import "@babel/polyfill";
 import elementClosest from 'element-closest';
 elementClosest(window);
+import 'fetch-polyfill';
+import 'es6-promise/auto';
+import 'formdata-polyfill';
+import './modules/plugins/append-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
 
 //структурные модули проекта
 import initPopups from './modules/popups/initPopups';
