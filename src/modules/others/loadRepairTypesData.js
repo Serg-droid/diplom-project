@@ -7,7 +7,10 @@ const loadRepairTypesData = (cb) => {
             return response.json();
         })
         .then((data) => dataHandler(data))
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            cb();
+            console.log(err);
+        });
 
     const dataHandler = (data) => {
         const   navList = document.querySelector('.nav-list-popup-repair'),
