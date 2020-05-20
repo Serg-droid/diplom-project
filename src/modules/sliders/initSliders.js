@@ -33,6 +33,7 @@ const initSliders = () => {
 
     showTransparencySlider();
     setPopupTransparencySlider();
+    setAllTabsSliders()
 
     loadRepairTypesData(setAllTabsSliders);
 };
