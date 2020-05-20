@@ -1,7 +1,6 @@
 import slider from '../plugins/slider';
 
 const setAllTabsSliders = () => {
-    console.log('we are setted')
     const   allNavLists = document.querySelectorAll('.nav-list'),
             allNavArrowsLeft = document.querySelectorAll('.nav-arrow_left'),
             allNavArrowsRight = document.querySelectorAll('.nav-arrow_right');
