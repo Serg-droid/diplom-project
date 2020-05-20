@@ -1,4 +1,4 @@
-import slider from './slider';
+import slider from '../plugins/slider';
 
 const setPopupTransparencySlider = () => {
     const   popupTransparency = document.querySelector('.popup-transparency'),

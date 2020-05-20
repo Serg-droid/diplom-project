@@ -1,5 +1,5 @@
-import makeRequest from './makeRequest';
-import showPopupThank from './showPopupThank';
+import makeRequest from '../plugins/makeRequest';
+import showPopupThank from '../popups/showPopupThank';
 
 const setForms = () => {
     const   allForms = document.querySelectorAll('form'),

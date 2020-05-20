@@ -1,6 +1,3 @@
-import { transcode } from "buffer";
-import { transform } from "async";
-
 const setHeaderListeners = () => {
     const   header = document.querySelector('.header'),
             arrowImg = header.querySelector('.header-contacts__arrow > img'),
@@ -9,6 +6,18 @@ const setHeaderListeners = () => {
             popupDialogMenu = document.querySelector('.popup-dialog-menu'),
             body = document.querySelector('body'),
             closeMenu = document.querySelector('.close-menu');
+
+    if(window.innerWidth < 576){
+        popupDialogMenu.style.transform = 'translate3d(0, -100vh, 0)';
+    }
+
+    window.addEventListener('resize', () => {
+        if(window.innerWidth < 576){
+            popupDialogMenu.style.transform = 'translate3d(0, -100vh, 0)';
+        }else{
+            popupDialogMenu.style.transform = 'translate3d(645px, 0, 0)';
+        }
+    });
 
     const hideMenu = (e) => {
         const target = e.target;
@@ -33,7 +42,7 @@ const setHeaderListeners = () => {
                 hiddenNumber.style.cssText = 'opacity: 0; margin-top: 0; transform: translateX(0px);';
             }
         }else if(target === menuIcon){
-            window.innerWidth < 576 ? popupDialogMenu.style.transform = 'translate3d(0, 0, 0)' : popupDialogMenu.style.transform = 'translateX(0)';
+            popupDialogMenu.style.transform = 'translate3d(0, 0, 0)';
             body.addEventListener('click', hideMenu);
         }
     });

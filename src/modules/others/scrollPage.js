@@ -3,7 +3,7 @@ const scrollPage = () => {
             buttonFooter = document.querySelector('.button-footer');
 
     menuLinks.forEach((link) => {
-        if(link.matches('.link-popup-repair')) return;
+        if(link.matches('.link-popup-repair, .no-overflow')) return;
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const   elemId = link.href.split('#')[1],

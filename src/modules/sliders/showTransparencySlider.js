@@ -1,4 +1,4 @@
-import slider from './slider';
+import slider from '../plugins/slider';
 
 const showTransparencySlider = () => {
     const   transparencyWrap = document.querySelector('.transparency-slider-wrap'),

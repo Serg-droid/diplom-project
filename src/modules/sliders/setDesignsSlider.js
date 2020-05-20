@@ -2,12 +2,18 @@ const setDesignsSlider = () => {
     const   designs = document.getElementById('designs'),
             allSliders = designs.querySelectorAll('.designs-slider > div'),
             allPreviewBlocks = designs.querySelectorAll('.preview-block'),
-            navButtons = designs.querySelectorAll('.nav-list > button');
+            navButtons = designs.querySelectorAll('.nav-list > button'),
+            counterCurrent = designs.querySelector('.slider-counter-content__current'),
+            counterTotal = designs.querySelector('.slider-counter-content__total'),
+            arrLeft = document.getElementById('design_left'),
+            arrRight = document.getElementById('design_right');
 
     //устанавиваем состояния слайдера -- меняются динамически
     let activeSlider = 0,
         allSlides = allSliders[activeSlider].querySelectorAll('.designs-slider__style-slide'),
         activeSlide = 0;
+
+    counterTotal.textContent = allSlides.length;
 
     const allPreviewsArr = [];
 
@@ -55,6 +61,8 @@ const setDesignsSlider = () => {
             allPreviewsArr[index][0].classList.add('preview_active');
 
             allSlides = allSliders[index].querySelectorAll('.designs-slider__style-slide');
+            counterTotal.textContent = allSlides.length;
+            counterCurrent.textContent = 1;
 
             //здесь меняем стейты
             activeSlider = index;
@@ -67,10 +75,18 @@ const setDesignsSlider = () => {
         allSlides[activeSlide].style.height = '0';
         allSlides[nextSlide].style.width = '100%';
         allSlides[nextSlide].style.height = 'auto';
+        counterCurrent.textContent = nextSlide + 1;
 
         //меняем стейт
         activeSlide = nextSlide;
     };
+
+    arrRight.addEventListener('click', () => {
+        activeSlide < allSlides.length - 1 ? changeSlide(activeSlide + 1) : true;
+    });
+    arrLeft.addEventListener('click', () => {
+        activeSlide > 0 ? changeSlide(activeSlide - 1) : true;
+    });
 };
 
 export default setDesignsSlider;

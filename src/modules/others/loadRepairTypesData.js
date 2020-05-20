@@ -18,9 +18,10 @@ const loadRepairTypesData = () => {
         headDate.textContent = data[0].date;
         data = data.slice(1);
         navList.innerHTML = '';
-        contentTable.innerHTML = '';
 
         const fillContent = (priceList) => {
+            contentTable.innerHTML = '';
+            
             const contentList = document.createElement('table');
             contentList.classList.add('popup-repair-types-content-table__list');
             const tBody = document.createElement('tbody');
@@ -58,10 +59,6 @@ const loadRepairTypesData = () => {
             button.textContent = service.title;
 
             navList.append(button);
-
-            //наполнение контента
-            const priceList = service.priceList;
-            fillContent(priceList);
         };
 
         navList.children[0].classList.add('active');
@@ -77,9 +74,12 @@ const loadRepairTypesData = () => {
             activeButton.classList.remove('active');
             target.classList.add('active');
 
+            //наполнение контента
+            const service = data[index];
+            const priceList = service.priceList;
+            fillContent(priceList);
+
             switchInner.textContent = data[index].title;
-            const tappedList = contentTable.children[index];
-            tappedList.scrollIntoView({ block: 'start', behavior: 'smooth' });
         });
     };
 };

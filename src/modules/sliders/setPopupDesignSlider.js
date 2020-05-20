@@ -12,12 +12,35 @@ const setPopupDesignSlider = () => {
         allSlides = allSliders[activeSlider].querySelectorAll('.popup-design-slider__style-slide'),
         activeSlide = 0;
 
+    const changeSlide = (nextSlide) => {
+        allSlides[activeSlide].style.width = '0';
+        allSlides[activeSlide].style.height = '0';
+        allSlides[nextSlide].style.width = '100%';
+        allSlides[nextSlide].style.height = 'auto';
+
+        activeSlide = nextSlide;
+        currentSlide.textContent = activeSlide + 1;
+    };
+
     totalSlides.textContent = allSlides.length;
 
     allSliders.forEach((slider, index) => {
         if(index === activeSlider) return;
         slider.style.display = 'none';
     });
+
+    const resetSlides = () => {
+        allSlides.forEach((slide, index) => {
+            if(index === activeSlide){
+                slide.style.width = '100%';
+                slide.style.height = 'auto';
+                return;
+            }
+            slide.style.width = '0';
+            slide.style.height = '0';
+        })
+    };
+    resetSlides();
             
     navButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
@@ -34,20 +57,11 @@ const setPopupDesignSlider = () => {
             activeSlider = index;
             allSlides = allSliders[activeSlider].querySelectorAll('.popup-design-slider__style-slide');
             activeSlide = 0;
+            resetSlides();
             currentSlide.textContent = 1;
             totalSlides.textContent = allSlides.length;
         });
     });
-
-    const changeSlide = (nextSlide) => {
-        allSlides[activeSlide].style.width = '0';
-        allSlides[activeSlide].style.height = '0';
-        allSlides[nextSlide].style.width = '100%';
-        allSlides[nextSlide].style.height = 'auto';
-
-        activeSlide = nextSlide;
-        currentSlide.textContent = activeSlide + 1;
-    };
 
     arrowLeft.addEventListener('click', () => {
         const nextSlide = activeSlide === 0 ? allSlides.length - 1 : activeSlide - 1;

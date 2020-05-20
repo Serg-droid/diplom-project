@@ -21,7 +21,7 @@ const slider = ({ arrowRight, arrowLeft, slider, slidesArr, callback }) => {
     //получаем ширину 1 слайда и слайдера
     const   slideWidth = slidesArr[0].getBoundingClientRect().width,
             sliderWidth = slider.getBoundingClientRect().width;
-
+            
     //опции для слайдера
     const options = {
         min: 0,

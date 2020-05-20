@@ -4,7 +4,7 @@ const showPopupPrivacy = () => {
 
     const hidePopupPrivacy = (e) => {
         const target = e.target;
-        if(!target.closest('.popup-dialog-privacy')){
+        if(target.matches('.close') || !target.closest('.popup-dialog-privacy')){
             popupPrivacy.style.visibility = 'hidden';
             popupPrivacy.removeEventListener('click', hidePopupPrivacy);
         }

@@ -1,4 +1,4 @@
-import slider from './slider';
+import slider from '../plugins/slider';
 
 const setPartnersSlider = () => {
     const   partners = document.getElementById('partners'),
